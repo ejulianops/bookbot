@@ -1,24 +1,22 @@
+# Command-line application in Python that does static analysis on text files
+# First Python project for beginners: https://www.boot.dev/learn/build-bookbot
+
 def main():
     book_path = './books/frankenstein.txt'
 
     # 8: Bookbot - Read file
     text = read_book(book_path)
-    #print(text)
     
     # 9: Count words
     words_count = count_words(text)
-    #print(words_count)
 
     # 10: Count characters
     characters_count = count_characters(text)
-    #print(characters_count)
 
     # 11: Print a report
     sorted_characters_count = get_sorted_list(characters_count)
     report = print_report(book_path, words_count, sorted_characters_count)
     print(report)
-
-
 
 # 8: Bookbot - Read file
 def read_book(text_file):
@@ -61,6 +59,7 @@ def get_sorted_list(characters_dict):
     characters.sort(reverse=True, key=sort_characters)
     return characters
 
+# 11: print report
 def print_report(book_path, words_count, sorted_characters_list):
     report = f"""
     \n--- Begin report of {book_path[2:]} ---
@@ -72,6 +71,5 @@ def print_report(book_path, words_count, sorted_characters_list):
 
     report += "\n\n--- End report ---"
     return report
-
 
 main()
